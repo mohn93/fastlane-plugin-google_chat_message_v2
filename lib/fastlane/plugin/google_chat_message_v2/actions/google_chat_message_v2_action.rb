@@ -5,7 +5,6 @@ module Fastlane
   module Actions
     class GoogleChatMessageV2Action < Action
       def self.run(params)
-
         uri = URI.parse(params[:webhook])
 
         bodyText = { text: params[:text] }
@@ -22,11 +21,15 @@ module Fastlane
 
         # Send the request
         response = http.request(request)
-
-        UI.message("✅ Message sent!")
-        UI.message("✅ Message sent!")
-        UI.message("✅ The google_chat_message plugin is working! 🎉")
-
+        # Check if code is 200 print success if not, print  response body
+        if response.code == '200'
+          UI.message("✅ Message sent!")
+          UI.message("✅ The google_chat_message_v2 plugin is working! 🎉")
+        else
+          UI.message("❌ Message not sent!")
+          UI.message("❌ The google_chat_message_v2 plugin is not working! ")
+          UI.message("❌ #{response.body}")
+        end
       end
 
       def self.description
