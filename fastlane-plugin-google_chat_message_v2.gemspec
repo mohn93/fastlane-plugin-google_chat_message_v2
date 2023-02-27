@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.author        = 'Mohanned Binmiskeen'
   spec.email         = 'mohn93@gmail.com'
 
-  spec.summary       = 'Chat'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-google_chat_message_v2"
+  spec.summary       = 'Sending Google Chat Messages'
+  # spec.homepage      = "https://github.com/mohn93/fastlane-plugin-google_chat_message_v2"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
